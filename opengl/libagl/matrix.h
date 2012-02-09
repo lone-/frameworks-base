@@ -74,7 +74,7 @@ GLfixed vsquare3(GLfixed a, GLfixed b, GLfixed c)
         ); 
     return r;
 
-#elif defined(__mips__)
+#elif defined(__mips__) && (__mips >= 4)
 	GLfixed res;
 	int32_t t1,t2,t3;
 	asm(
@@ -159,7 +159,7 @@ static inline GLfixed mla3a( GLfixed a0, GLfixed b0,
         ); 
     return r;
 
-#elif defined(__mips__)
+#elif defined(__mips__) && (__mips >= 4)
 
 	GLfixed res;
 	int32_t t1,t2;
@@ -214,7 +214,7 @@ static inline GLfixed mla3a16( GLfixed a0, int32_t b1b0,
         ); 
     return r;
 
-#elif defined(__mips__)
+#elif defined(__mips__) && (__mips >= 4)
 	int32_t b0,b1,res;
     asm(
         #ifdef _MIPS_ARCH_MIPS32R2
@@ -453,7 +453,7 @@ static inline GLfixed mla3( GLfixed a0, GLfixed b0,
         :   "cc"
         ); 
     return r;
-#elif defined(__mips__)
+#elif defined(__mips__) && (__mips >= 4)
     GLfixed res;
 	int32_t t1,t2;
     asm(
@@ -508,7 +508,7 @@ static inline GLfixed mla4( GLfixed a0, GLfixed b0,
         ); 
     return r;
   
-#elif defined(__mips__)
+#elif defined(__mips__) && (__mips >= 4)
     GLfixed res;
 	int32_t t1,t2;
 	asm(
