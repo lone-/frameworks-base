@@ -70,7 +70,7 @@ using namespace android;
         CALL_GL_API(_api, __VA_ARGS__) \
         return 0; // placate gcc's warnings. never reached.
 
-  #elif defined(__mips__)
+  #elif defined(_MIPS_ARCH_MIPS32R2)
 
     #define API_ENTRY(_api) __attribute__((noinline)) _api
 
